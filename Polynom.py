@@ -25,25 +25,25 @@ class Polynom:
         return Polynom(result_koeffizienten)
 
     def auswerten(self, x):
-        ergebnis = 0
+        result = 0
         for i in range(self.grad() + 1):
-            ergebnis += self.koeffizienten[i] * x ** i
-        return ergebnis
+            result += self.koeffizienten[i] * x ** i
+        return result
     
     def __str__(self):
-        ergebnis = ""
+        result = ""
         for i, koeffizient in enumerate(self.koeffizienten):
             if koeffizient == 0:
                 continue
             if koeffizient < 0:
-                ergebnis += " - "
+                result += " - "
             else:
                 if i > 0 or (i == 0 and koeffizient != 1):
-                    ergebnis += " + "
+                    result += " + "
             if abs(koeffizient) != 1 or i == 0:
-                ergebnis += str(abs(koeffizient))
+                result += str(abs(koeffizient))
             if i > 0:
-                ergebnis += "x"
+                result += "x"
                 if i > 1:
-                    ergebnis += "^" + str(i)
-        return ergebnis
+                    result += "^" + str(i)
+        return result
