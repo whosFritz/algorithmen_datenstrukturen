@@ -25,10 +25,10 @@ class Polynom:
         return Polynom(ergebnis_koeffizienten)
 
     def auswerten(self, x):
-        ergebnis = 0
+        ergebniss = 0
         for i in range(self.grad() + 1):
-            ergebnis += self.koeffizienten[i] * x ** i
-        return ergebnis
+            ergebniss += self.koeffizienten[i] * x ** i
+        return ergebniss
     
     def __str__(self):
         ergebnis = ""
